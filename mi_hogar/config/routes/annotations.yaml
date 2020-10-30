@@ -1,0 +1,5 @@
+web:
+    resource: ../../src/Controller/web/
+    type: annotation
+    prefix: '/'
+    name_prefix: ''

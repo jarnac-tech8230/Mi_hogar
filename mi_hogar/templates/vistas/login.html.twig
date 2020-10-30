@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Iniciar sesión {% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+                    <div style="height:100vh;padding-top: 10%;
+                            background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.7)), url({{ asset('img/4.jpg') }}) ; background-size: cover;">
+
+
+                        <a href="{{ path('homepage') }}" >
+                            <div class="text-center h-25" >
+                                <img src="{{ asset('img/logo2.png') }}" class="h-100">
+                            </div>
+                        </a>
+
+
+                        <form action="{{path('homepage')}}" >
+                            <div class="row " >
+                                <div class="col-md-10" style="padding-left:10%;">
+
+                                <div class="col-md-6 mb-3" style="width: 100%;display: block;margin-left: auto;
+  margin-right: auto;">
+                                    <label style="color: #C28212;" for="firstName">Email</label>
+                                    <input type="email" class=" inter" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="col-md-6 mb-3" style="width: 100%;display: block;margin-left: auto;
+  margin-right: auto;">
+                                    <label style="color: #C28212;"for="firstName">Contraseña</label>
+                                    <input type="password" class=" inter" id="exampleInputPassword1">
+                                </div>
+                                </div>
+                            </div >
+                            <div class="col-md-6" style="width: 100%;display: block;margin-left: auto;
+  margin-right: auto;padding-left:10%;" > <br />
+                                <button type="submit" class="btn registrar">Iniciar sesión</button>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+
+{% endblock %}
+
