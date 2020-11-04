@@ -1,49 +1,60 @@
-{% extends 'base.html.twig' %}
+{% extends 'defaults/base.html.twig' %}
 
 {% block title %} Iniciar sesión {% endblock %}
 
 {% block styles %}
-    {{ parent() }}
+    {#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">#}
+    {#    <link href="{{ asset('css/estilo.css') }}" rel="stylesheet" />#}
+    {#            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">#}
+{#    {{ parent() }}#}
 {% endblock %}
 
 {% block body %}
-
-                    <div style="height:100vh;padding-top: 10%;
-                            background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.7)), url({{ asset('img/4.jpg') }}) ; background-size: cover;">
-
-
-                        <a href="{{ path('homepage') }}" >
-                            <div class="text-center h-25" >
-                                <img src="{{ asset('img/logo2.png') }}" class="h-100">
+<section class="home-section home-full-height" style="background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.7)), url({{ asset('img/4.jpg') }}) ;">
+        <div class="titan-caption" style=" margin: auto;
+  max-width: 80%;
+  padding: 10px;">
+            <a href="{{ path('homepage') }}" >
+                <div class="text-center h-25" >
+                    <img src="{{ asset('img/logo2.png') }}" class="h-100">
+                </div>
+            </a>
+            <div class="caption-content"style=" margin: auto;
+  width: 60%;
+  padding: 15%;
+ ">
+                <form action="{{ path('homepage') }}" autocomplete="off" >
+                    <div >
+                            <div style=" margin: auto;">
+                                <input type="email" style="width: 100%;" class=" inter" placeholder="Email" aria-describedby="emailHelp">
                             </div>
-                        </a>
-
-
-                        <form action="{{path('homepage')}}" >
-                            <div class="row " >
-                                <div class="col-md-10" style="padding-left:10%;">
-
-                                <div class="col-md-6 mb-3" style="width: 100%;display: block;margin-left: auto;
-  margin-right: auto;">
-                                    <label style="color: #C28212;" for="firstName">Email</label>
-                                    <input type="email" class=" inter" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                </div>
-                                <div class="col-md-6 mb-3" style="width: 100%;display: block;margin-left: auto;
-  margin-right: auto;">
-                                    <label style="color: #C28212;"for="firstName">Contraseña</label>
-                                    <input type="password" class=" inter" id="exampleInputPassword1">
-                                </div>
-                                </div>
-                            </div >
-                            <div class="col-md-6" style="width: 100%;display: block;margin-left: auto;
-  margin-right: auto;padding-left:10%;" > <br />
-                                <button type="submit" class="btn registrar">Iniciar sesión</button>
+                        <br>
+                            <div  style=" margin: auto;" >
+                                <input type="password" style="width: 100%;" class=" inter" placeholder="Contraseña" id="exampleInputPassword1">
                             </div>
 
-                        </form>
 
+                    <div><br/>
+                        <button type="submit" class=" registrar">Iniciar sesión</button>
+                    </div>
 
                     </div>
 
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
 {% endblock %}
+
+{#{% block javascript %}#}
+{#        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>#}
+{#        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>#}
+
+{#{% endblock %}#}
 

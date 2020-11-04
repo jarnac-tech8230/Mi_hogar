@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends '/defaults/base.html.twig' %}
 
 {% block title %} Inicio {% endblock %}
 
@@ -8,492 +8,270 @@
 
 {% block body %}
 
+{% include 'defaults/header.html.twig' %}
 
 
-
-    <nav class="navbar fixed-top navbar-expand-lg text-light" style="background-color: #C28212; color: white;">
-
-        <div class="navbar-header" style="padding-left:20px;">
-            <a href="{{ path('homepage') }}" class="navbar-brand"> <img src="{{ asset('img/logo-2.png') }}"
-                                                                        style=" max-width:100%;height:30px;"
-                                                                        class="navbar-logo"></a>
-        </div>
-
-        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <div class="navbar-collapse justify-content-center">
-                <ul class="navbar-nav  ">
-                    <li class="nav-item ">
-                                    <span class="nav-link "
-                                          aria-haspopup="true" aria-expanded="false"><a href="{{ path('homepage') }}" style="text-decoration: none; color:white;">Inicio</a></span>
-                    </li>
-                    <li class="nav-item dropdown dropbtn">
-                                    <span class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
-                                          aria-haspopup="true" aria-expanded="false">Categorías</span>
-                        <div class="dropdown-content">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown dropbtn">
-                                    <span class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
-                                          aria-haspopup="true" aria-expanded="false">Agencias</span>
-                        <div class="dropdown-content">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown dropbtn">
-                                    <span class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
-                                          aria-haspopup="true" aria-expanded="false">Servicios</span>
-                        <div class="dropdown-content">
-                            <a href="#">Action</a>
-                            <a href="#">Another action</a>
-                            <a href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#">Separated link</a>
-                        </div>
-                    </li>
-
-                </ul>
-
-
-            </div>
-            <div style="padding-right: 5%;" class=" ">
-{#                                    <span class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="group"#}
-{#                                          aria-haspopup="true" aria-expanded="false">#}
-
-
-{#                                    </span>#}
-
-                <div class="dropdown dropleft">
-                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-circle dropbtn" fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
-                        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
-                    </svg>
-                     nombre usuario
-                    <div class="dropdown-content">
-                        <a href="{{ path('login') }}">Iniciar sesión</a>
-                        <a href="#">Registrsarse</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
-    </nav>
-
-
-
-
-
-    <div style="background-color: #E9E9E9; ">
-
-
-        <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
-
-            <div class="carousel-inner">
-                <a href="#" class="carousel-item active">
-
-
-                            <img src="{{ asset('img/2.jpg') }}" class="w-100 h-50 d-block" style="height: auto;" >
-
-                        <div class="cabeza" style="height:100%;">
-
-                    <div style="position:relative; ">
-                        <div class="p-1"
-                             style="background-color: #C28212; font-size:.875rem; color: white; position: absolute; top: 150px; right: 0;">
-                            Novedad
-                    </div>
-                </div>
-
-                        </div>
-
-            </a>
-
-                <a href="#" class="carousel-item">
-                    {#                <div style="height:100vh;#}
-                    {#                        background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.7)), url({{ asset('img/2.jpg') }}) ; background-size: cover;">#}
-                    {#                    #}
-
-                    {#                        </div>#}
-
-                    <img src="{{ asset('img/4.jpg') }}" class="w-100 h-50 d-block" style="height: auto;" >
-
-                    <div class="cabeza" style="height:100%;">
-
-                        <div style="position:relative; ">
-                            <div class="p-1"
-                                 style="background-color: #C28212; font-size:.875rem; color: white; position: absolute; top: 150px; right: 0;">
-                                Novedad
-                            </div>
-                        </div>
-
-                    </div>
-
-                </a>
-
-                <a href="#" class="carousel-item">
-                    {#                <div style="height:100vh;#}
-                    {#                        background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.7)), url({{ asset('img/2.jpg') }}) ; background-size: cover;">#}
-                    {#                    #}
-
-                    {#                        </div>#}
-
-                    <img src="{{ asset('img/3.jpg') }}" class="w-100 d-block" style="height: auto;" >
-
-                    <div class="cabeza" style="height:100%;">
-
-                        <div style="position:relative; ">
-                            <div class="p-1"
-                                 style="background-color: #C28212; font-size:.875rem; color: white; position: absolute; top: 150px; right: 0;">
-                                Novedad
-                            </div>
-                        </div>
-
-                    </div>
-
-                </a>
-            </div>
-        </div>
-{#        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">#}
-{#            <span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
-{#            <span class="sr-only">Previous</span>#}
-{#        </a>#}
-{#        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">#}
-{#            <span class="carousel-control-next-icon" aria-hidden="true"></span>#}
-{#            <span class="sr-only">Next</span>#}
-{#        </a>#}
-
-        <div class="pt-3" style="margin-left:20px; margin-right:20px;  background-color:#E9E9E9">
-            <div class="bg-light  jumbotron">
-                <h1 class="text-center ">
-                    ¡Encuentra tu próxima propiedad!
-                </h1>
-                <div class="card-body">
-                    <form class="needs-validation">
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <label for="firstName">Región</label>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Seleccionar...</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="firstName">Cuidad</label>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Seleccionar...</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-
-                            <div class="col-md-4 mb-3">
-                                <label for="firstName">Tipo de propiedad</label>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Seleccionar...</option>
-                                    <optgroup label="Residencial">
-                                        <option value="19367,2">Casa</option>
-                                        <option value="19365,2">Departamento</option>
-                                        <option value="19369,2">Parcela de agrado</option>
-                                        <option value="19371,2">Loteo / Terreno</option>
-                                        <option value="19370,2">Bodega / Estacionamiento</option>
-                                        <option value="19374,2">Penthouse</option>
-                                    </optgroup>
-                                    <optgroup label="Comercial">
-                                        <option value="19434,1">Restaurante</option>
-                                        <option value="19436,1">Hotel / Alojamiento</option>
-                                        <option value="19437,1">Industrial</option>
-                                        <option value="19438,1">Propiedad agricola / Parcela / Terreno</option>
-                                        <option value="19439,1">Oficina</option>
-                                        <option value="19440,1">Local comercial</option>
-                                        <option value="19441,1">Bodega</option>
-                                        <option value="19433,1">Educaci&#243;n</option>
-                                    </optgroup>
-                                </select>
-                            </div>
-
-                            <div class="col-md-4 mb-3">
-                                <label for="firstName">Min</label>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option value="-1">Min:</option>
-                                    <option value="0">0</option>
-                                    <option value="50000000">50.000.000</option>
-                                    <option value="60000000">60.000.000</option>
-                                    <option value="70000000">70.000.000</option>
-                                    <option value="80000000">80.000.000</option>
-                                    <option value="90000000">90.000.000</option>
-                                    <option value="100000000">100.000.000</option>
-                                    <option value="120000000">120.000.000</option>
-                                    <option value="140000000">140.000.000</option>
-                                    <option value="160000000">160.000.000</option>
-                                    <option value="180000000">180.000.000</option>
-                                    <option value="200000000">200.000.000</option>
-                                    <option value="250000000">250.000.000</option>
-                                    <option value="300000000">300.000.000</option>
-                                    <option value="350000000">350.000.000</option>
-                                    <option value="400000000">400.000.000</option>
-                                    <option value="450000000">450.000.000</option>
-                                    <option value="500000000">500.000.000</option>
-                                    <option value="600000000">600.000.000</option>
-                                    <option value="700000000">700.000.000</option>
-                                    <option value="800000000">800.000.000</option>
-                                    <option value="900000000">900.000.000</option>
-                                    <option value="1000000000">1.000.000.000</option>
-                                </select>
-                            </div>
-
-                            <div class="col-md-4 mb-3">
-                                <label for="firstName">Max</label>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option value="-1">Max:</option>
-                                    <option value="0">0</option>
-                                    <option value="50000000">50.000.000</option>
-                                    <option value="60000000">60.000.000</option>
-                                    <option value="70000000">70.000.000</option>
-                                    <option value="80000000">80.000.000</option>
-                                    <option value="90000000">90.000.000</option>
-                                    <option value="100000000">100.000.000</option>
-                                    <option value="120000000">120.000.000</option>
-                                    <option value="140000000">140.000.000</option>
-                                    <option value="160000000">160.000.000</option>
-                                    <option value="180000000">180.000.000</option>
-                                    <option value="200000000">200.000.000</option>
-                                    <option value="250000000">250.000.000</option>
-                                    <option value="300000000">300.000.000</option>
-                                    <option value="350000000">350.000.000</option>
-                                    <option value="400000000">400.000.000</option>
-                                    <option value="450000000">450.000.000</option>
-                                    <option value="500000000">500.000.000</option>
-                                    <option value="600000000">600.000.000</option>
-                                    <option value="700000000">700.000.000</option>
-                                    <option value="800000000">800.000.000</option>
-                                    <option value="900000000">900.000.000</option>
-                                    <option value="1000000000">1.000.000.000</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="firstName">Habitaciones</label>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Seleccionar...</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="3">4</option>
-                                    <option value="3">5</option>
-                                    <option value="3">6</option>
-                                    <option value="3">7</option>
-                                </select>
-                            </div>
-
-
-                            <div class="col search pt-4">
-                                <button class="btn btn-lg btn-block text-light" style="background-color:#C28212;"
-                                        type="submit">BUSCAR
-                                </button>
-                                {#                            <input type="submit" name="ctl01$ctl00$btnSearch" value="Buscar" id="ctl01_ctl00_btnSearch" class="pull-right btn btn-search" style="display: none" />#}
-                            </div>
-                        </div>
-                    </form>
+        <section class="home-section home-parallax home-fade home-full-height bg-dark-30 agency-page-header" id="home" style="background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.7)), url({{ asset('img/4.jpg') }}) ;">
+            <div class="titan-caption">
+                <div class="caption-content">
+                    <div class="font-alt mb-30 titan-title-size-1">¡Cuentanos de tus ideas!</div>
+                    <div class="font-alt mb-40 titan-title-size-3">Hacemos Negocio <span class="rotate">facíl | simple | flexible</span>
+                    </div><a class="section-scroll btn btn-border-w btn-circle" href="#">Saber más</a>
                 </div>
             </div>
-        </div>
+        </section>
 
+        <div class="main">
+            <div class="container">
 
-        {#                <div class="col-md-6 mb-3">#}
-        {#                    <label for="lastName">Last name</label>#}
-        {#                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>#}
-        {#                    <div class="invalid-feedback">#}
-        {#                        Valid last name is required.#}
-        {#                    </div>#}
+                <div class="bg-light  jumbotron">
+                    <h1 class="text-center ">
+                        ¡Encuentra tu próxima propiedad!
+                    </h1>
+                    <div class="card-body">
+                        <form id="contactForm" role="form" method="post" action="#">
+                            <div class="row">
+                                {#                                        <div class="col-md-4 mb-3">#}
+                                {#                                        <label class="sr-only" for="name">Name</label>#}
+                                {#                                        <input class="form-control" type="text" id="name" name="name" placeholder="Your Name*" required="required" data-validation-required-message="Please enter your name."/>#}
+                                {#                                        <p class="help-block text-danger"></p>#}
+                                {#                                    </div>#}
+                                <div class="col-md-4 mb-3">
+                                    <label for="firstName">Región</label>
+                                    <select class="form-control" id="inputGroupSelect01">
+                                        <option selected>Seleccionar...</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="firstName">Cuidad</label>
+                                    <select class="form-control" id="inputGroupSelect01">
+                                        <option selected>Seleccionar...</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
 
-        {#            <div class="mb-3">#}
-        {#                <label for="username">Username</label>#}
-        {#                <div class="input-group">#}
-        {#                    <div class="input-group-prepend">#}
-        {#                        <span class="input-group-text">@</span>#}
-        {#                    </div>#}
-        {#                    <input type="text" class="form-control" id="username" placeholder="Username" required>#}
-        {#                    <div class="invalid-feedback" style="width: 100%;">#}
-        {#                        Your username is required.#}
-        {#                    </div>#}
-        {#                </div>#}
-        {#            </div>#}
+                                <div class="col-md-4 mb-3">
+                                    <label for="firstName">Tipo de propiedad</label>
+                                    <select class="form-control" id="inputGroupSelect01">
+                                        <option selected>Seleccionar...</option>
+                                        <optgroup label="Residencial">
+                                            <option value="19367,2">Casa</option>
+                                            <option value="19365,2">Departamento</option>
+                                            <option value="19369,2">Parcela de agrado</option>
+                                            <option value="19371,2">Loteo / Terreno</option>
+                                            <option value="19370,2">Bodega / Estacionamiento</option>
+                                            <option value="19374,2">Penthouse</option>
+                                        </optgroup>
+                                        <optgroup label="Comercial">
+                                            <option value="19434,1">Restaurante</option>
+                                            <option value="19436,1">Hotel / Alojamiento</option>
+                                            <option value="19437,1">Industrial</option>
+                                            <option value="19438,1">Propiedad agricola / Parcela / Terreno</option>
+                                            <option value="19439,1">Oficina</option>
+                                            <option value="19440,1">Local comercial</option>
+                                            <option value="19441,1">Bodega</option>
+                                            <option value="19433,1">Educaci&#243;n</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
 
-        {#            <div class="mb-3">#}
-        {#                <label for="email">Email <span class="text-muted">(Optional)</span></label>#}
-        {#                <input type="email" class="form-control" id="email" placeholder="you@example.com">#}
-        {#                <div class="invalid-feedback">#}
-        {#                    Please enter a valid email address for shipping updates.#}
-        {#                </div>#}
-        {#            </div>#}
+                                <div class="col-md-4 mb-3">
+                                    <label for="firstName">Min</label>
+                                    <select class="form-control" id="inputGroupSelect01">
+                                        <option value="-1">Min:</option>
+                                        <option value="0">0</option>
+                                        <option value="50000000">50.000.000</option>
+                                        <option value="60000000">60.000.000</option>
+                                        <option value="70000000">70.000.000</option>
+                                        <option value="80000000">80.000.000</option>
+                                        <option value="90000000">90.000.000</option>
+                                        <option value="100000000">100.000.000</option>
+                                        <option value="120000000">120.000.000</option>
+                                        <option value="140000000">140.000.000</option>
+                                        <option value="160000000">160.000.000</option>
+                                        <option value="180000000">180.000.000</option>
+                                        <option value="200000000">200.000.000</option>
+                                        <option value="250000000">250.000.000</option>
+                                        <option value="300000000">300.000.000</option>
+                                        <option value="350000000">350.000.000</option>
+                                        <option value="400000000">400.000.000</option>
+                                        <option value="450000000">450.000.000</option>
+                                        <option value="500000000">500.000.000</option>
+                                        <option value="600000000">600.000.000</option>
+                                        <option value="700000000">700.000.000</option>
+                                        <option value="800000000">800.000.000</option>
+                                        <option value="900000000">900.000.000</option>
+                                        <option value="1000000000">1.000.000.000</option>
+                                    </select>
+                                </div>
 
-        {#            <div class="mb-3">#}
-        {#                <label for="address">Address</label>#}
-        {#                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>#}
-        {#                <div class="invalid-feedback">#}
-        {#                    Please enter your shipping address.#}
-        {#                </div>#}
-        {#            </div>#}
+                                <div class="col-md-4 mb-3">
+                                    <label for="firstName">Max</label>
+                                    <select class="form-control" id="inputGroupSelect01">
+                                        <option value="-1">Max:</option>
+                                        <option value="0">0</option>
+                                        <option value="50000000">50.000.000</option>
+                                        <option value="60000000">60.000.000</option>
+                                        <option value="70000000">70.000.000</option>
+                                        <option value="80000000">80.000.000</option>
+                                        <option value="90000000">90.000.000</option>
+                                        <option value="100000000">100.000.000</option>
+                                        <option value="120000000">120.000.000</option>
+                                        <option value="140000000">140.000.000</option>
+                                        <option value="160000000">160.000.000</option>
+                                        <option value="180000000">180.000.000</option>
+                                        <option value="200000000">200.000.000</option>
+                                        <option value="250000000">250.000.000</option>
+                                        <option value="300000000">300.000.000</option>
+                                        <option value="350000000">350.000.000</option>
+                                        <option value="400000000">400.000.000</option>
+                                        <option value="450000000">450.000.000</option>
+                                        <option value="500000000">500.000.000</option>
+                                        <option value="600000000">600.000.000</option>
+                                        <option value="700000000">700.000.000</option>
+                                        <option value="800000000">800.000.000</option>
+                                        <option value="900000000">900.000.000</option>
+                                        <option value="1000000000">1.000.000.000</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="firstName">Habitaciones</label>
+                                    <select class="form-control" id="inputGroupSelect01">
+                                        <option selected>Seleccionar...</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="3">4</option>
+                                        <option value="3">5</option>
+                                        <option value="3">6</option>
+                                        <option value="3">7</option>
+                                    </select>
+                                </div>
 
-        {#            <div class="mb-3">#}
-        {#                <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>#}
-        {#                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">#}
-        {#            </div>#}
+                                <div class="col-md-4">
+                                     <br>
+                                    <button class="btn btn-round btn-block"
+                                            style="background-color:#c28212; color: white;"
+                                            type="submit">BUSCAR
+                                    </button>
 
-        {#            <div class="row">#}
-        {#                <div class="col-md-5 mb-3">#}
-        {#                    <label for="country">Country</label>#}
-        {#                    <select class="custom-select d-block w-100" id="country" required>#}
-        {#                        <option value="">Choose...</option>#}
-        {#                        <option>United States</option>#}
-        {#                    </select>#}
-        {#                    <div class="invalid-feedback">#}
-        {#                        Please select a valid country.#}
-        {#                    </div>#}
-        {#                </div>#}
-        {#                <div class="col-md-4 mb-3">#}
-        {#                    <label for="state">State</label>#}
-        {#                    <select class="custom-select d-block w-100" id="state" required>#}
-        {#                        <option value="">Choose...</option>#}
-        {#                        <option>California</option>#}
-        {#                    </select>#}
-        {#                    <div class="invalid-feedback">#}
-        {#                        Please provide a valid state.#}
-        {#                    </div>#}
-        {#                </div>#}
-        {#                <div class="col-md-3 mb-3">#}
-        {#                    <label for="zip">Zip</label>#}
-        {#                    <input type="text" class="form-control" id="zip" placeholder="" required>#}
-        {#                    <div class="invalid-feedback">#}
-        {#                        Zip code required.#}
-        {#                    </div>#}
-        {#                </div>#}
-
-        {#                        <div class="card-footer text-muted">#}
-        {#                            2 days ago#}
-        {#                        </div>#}
-        <div class="text-light text-center pt-4 h1" style="height: 30vh;
-                background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),url({{ asset('img/8.jpg') }});
-                background-attachment: fixed;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                ">
-            <p class="col pt-4 mt-4">
-                Te acompañamos durante todo
-                el proceso
-            </p>
-
-        </div>
-
-        <h2 class="text-center pt-3" style="color:#C28212;">Explorar por categorías</h2>
-        <br>
-
-        <div class="card-columns">
-            <a href="#">
-                <div class="card zoom ">
-                    <div class="navbar navbar-expand-lg justify-content-center navbar-dark text-white  "
-                         style="background-color:rgba(173,75,0,0.25); font-size:.875rem; color: white; position: absolute;  width: 100%;">
-                        Casas
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <img src="{{ asset('img/4.jpg') }}" class="card-img-top image " alt="...">
-
                 </div>
-            </a>
+            </div>
 
-            <a href="#">
-                <div class="card zoom">
-                    <div class="navbar navbar-expand-lg justify-content-center navbar-dark text-white  "
-                         style="background-color:rgba(173,75,0,0.25); font-size:.875rem; color: white; position: absolute;  width: 100%;">
-                        Departamentos
+
+            <section class="module bg-dark-30 pt-0 pb-0 parallax-bg testimonial"
+                     data-background="{{ asset('img/8.jpg') }}">
+                <div class="testimonials-slider pt-50 pb-50">
+                    <ul class="slides">
+                        <li>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="module-icon"><span class="icon-quote"></span></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <blockquote class="testimonial-text font-alt"> Te acompañamos durante todo
+                                            el proceso.
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="module-icon"><span class="icon-quote"></span></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <blockquote class="testimonial-text font-alt">Eres nuetra prioridad
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="module-icon"><span class="icon-quote"></span></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <blockquote class="testimonial-text font-alt">Construiremos tu casa junto a ti.
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="works">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <h2 class="text-center pt-3" style="color:#C28212;">Explorar por categorías</h2>
                     </div>
-                    <img src="{{ asset('img/2.jpg') }}" class="card-img-top" alt="...">
+                    <br/>
                 </div>
-            </a>
+                <div class="container">
+                    <ul class="works-grid works-grid-gut works-grid-3 works-hover-d" id="works-grid">
 
+                        <li class="work-item illustration webdesign"><a href="#">
+                                <div class="work-image"><img src="{{ asset('img/5.jpg') }}" alt="Portfolio Item"/></div>
+                                <div class="work-caption font-alt">
+                                    <h3 class="work-title">Corporate Identity</h3>
+                                    <div class="work-descr">Illustration</div>
+                                </div>
+                            </a></li>
 
-            <a href="#">
-                <div class="card zoom">
-                    <div class="navbar navbar-expand-lg justify-content-center navbar-dark text-white  "
-                         style="background-color:rgba(173,75,0,0.25); font-size:.875rem; color: white; position: absolute;   width: 100%;">
-                       Edificios
-                    </div>
-                    <img src="{{ asset('img/3.jpg') }}" class="card-img-top" alt="...">
+                        <li class="work-item marketing photography">
+                            <a href="#">
+                                <div class="work-image"><img src="{{ asset('img/2.jpg') }}" alt="Portfolio Item"/></div>
+                                <div class="work-caption font-alt">
+                                    <h3 class="work-title">Bag MockUp</h3>
+                                    <div class="work-descr">Marketing</div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="work-item illustration photography"><a href="#">
+                                <div class="work-image"><img src="{{ asset('img/4.jpg') }}" alt="Portfolio Item"/></div>
+                                <div class="work-caption font-alt">
+                                    <h3 class="work-title">Disk Cover</h3>
+                                    <div class="work-descr">Illustration</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </a>
+            </section>
+            <hr class="divider-w">
         </div>
-
     </div>
 
-
-    <footer class="container pt-4 ">
-        <div class="row">
-
-            <div class="col-6 col-md-4 p-2 ml-3">
-                <h5>Features</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Cool stuff</a></li>
-                    <li><a class="text-muted" href="#">Random feature</a></li>
-                    <li><a class="text-muted" href="#">Team feature</a></li>
-                    <li><a class="text-muted" href="#">Stuff for developers</a></li>
-                    <li><a class="text-muted" href="#">Another one</a></li>
-                    <li><a class="text-muted" href="#">Last time</a></li>
-                </ul>
-            </div>
-
-            <div class="col-8 col-md-4 p-2 ml-3">
-                <h5>Subscripciones</h5>
-                   <form><label for="exampleInputEmail1">Correo eléctronico</label>
-                       <div class="input-contain">
-                           <i class="fa fa-envelope icon"></i>
-                           <input class="input-fi" type="email" name="email">
-                       </div>
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input bg-dark"  id="exampleCheck1">
-                        <label class="form-check-label">Recibir oferta diariamente</label>
-                    </div>
-                    <button type="submit" class="btn text-white" style="background-color: #C28212;">Subscripción</button>
-                </form>
-            </div>
-            <div class="col-6 col-md p-2 ml-3">
-                <h5>About</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Team</a></li>
-                    <li><a class="text-muted" href="#">Locations</a></li>
-                    <li><a class="text-muted" href="#">Privacy</a></li>
-                    <li><a class="text-muted" href="#">Terms</a></li>
-                </ul>
-            </div>
-        </div>
-        {#        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>#}
-        <small class="d-block mb-3 text-right text-muted">&copy;2020</small>
-    </footer>
-
+ {% include 'defaults/footer.html.twig' %}
 
 {% endblock %}
 
 {% block javascript %}
 {{ parent() }}
+
 <script>
 
 </script>
