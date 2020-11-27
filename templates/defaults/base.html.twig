@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
+<html lang="es-ES" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}{% endblock %}</title>
 
 {#        <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicons/apple-icon-57x57.png">#}
@@ -44,13 +46,24 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <link id="color-scheme" href="{{ asset('css/colors/default.css') }}" rel="stylesheet">
 
-
-
-
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="{{ asset('css/estilo.css') }}" rel="stylesheet" />
         {% block stylesheets %}{% endblock %}
+
+    <style>
+
+        .flex-direction-nav .flex-prev {
+            opacity: 0;
+            left: 0;
+            cursor: url("{{ asset('img/prev-light.png')}}"), e-resize;
+        }
+
+        .flex-direction-nav .flex-next {
+            opacity: 0;
+            right: 0;
+            cursor: url("{{ asset('img/next-light.png')}}"), e-resize;
+        }
+    </style>
     </head>
     <body data-target=".onpage-navigation" data-offset="60">
 

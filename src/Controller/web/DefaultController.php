@@ -25,4 +25,13 @@ class DefaultController extends AbstractController
         return $this->render( 'vistas/login.html.twig' );
     }
 
+
+    /**
+     * @Route("/registrarse", name="registro")
+     */
+    public function registrar(){
+
+        return $this->render( 'vistas/registrar.html.twig' );
+    }
+
 }
