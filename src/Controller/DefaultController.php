@@ -1,14 +1,17 @@
 <?php
 
 
-namespace App\Controller\web;
+namespace App\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+
+
 class DefaultController extends AbstractController
 {
+
     /**
      * @Route("/", name="homepage")
      */
@@ -21,8 +24,15 @@ class DefaultController extends AbstractController
      * @Route("/login", name="login")
      */
     public function login(){
+        $nombre = "pepe";
 
-        return $this->render( 'vistas/login.html.twig' );
+
+        return $this->render( 'vistas/login.html.twig',
+        [
+            'login'=> $nombre
+        ]
+
+        );
     }
 
 

@@ -1,0 +1,90 @@
+{% extends '/defaults/base.html.twig' %}
+
+{% block title %} Categoría {% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    {% include 'defaults/header.html.twig' %}
+
+    <section class="home-section home-fade  bg-dark-30 agency-page-header" id="home" style="background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.7)), url({{ asset('img/4.jpg') }}) ;">
+        <div class="titan-caption">
+            <div class="caption-content">
+                <div class="font-alt mb-30 titan-title-size-1">¡Cuentanos de tus ideas!</div>
+                <div class="font-alt mb-40 titan-title-size-3">Hacemos Negocio <span class="rotate">facíl | simple | flexible</span>
+                </div><a class="section-scroll btn btn-border-w btn-circle" href="#">Saber más</a>
+            </div>
+        </div>
+    </section>
+
+<div class="main pt-40 pb-30">
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <h2 class="module-title font-alt " style="color: #c28212; font-weight: bold;">Categorías</h2>
+                    <div class="module-subtitle font-serif"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="filter font-alt" id="filters">
+                        <li><a class="current wow fadeInUp" href="#" data-filter="*">Todas</a></li>
+                        <li><a class="wow fadeInUp" href="#" data-filter=".Residencias" data-wow-delay="0.2s">Residencias</a></li>
+                        <li><a class="wow fadeInUp" href="#" data-filter=".Comerciales" data-wow-delay="0.4s">Comerciales</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="works-grid works-grid-gut works-grid-3 works-hover-g" id="works-grid">
+                <li class="work-item Residencias"><a href="{{ path('categriaList') }}">
+                        <div class="work-image"><img src="https://res.cloudinary.com/elpionn/image/upload/v1606874897/mi_hogar/4_nfvuaw.jpg" alt="Portfolio Item"/></div>
+                        <div class="work-caption font-alt">
+                            <h3 class="work-title">Residencia</h3>
+                            <div class="work-descr">Casa</div>
+                        </div></a></li>
+                <li class="work-item Residencias"><a href="{{ path('categriaList') }}">
+                        <div class="work-image"><img src="https://res.cloudinary.com/elpionn/image/upload/v1606874897/mi_hogar/3_woyipm.jpg" alt="Portfolio Item"/></div>
+                        <div class="work-caption font-alt">
+                            <h3 class="work-title">Residencia</h3>
+                            <div class="work-descr">Departamento</div>
+                        </div></a></li>
+                <li class="work-item Comerciales"><a href="{{ path('categriaList') }}">
+                        <div class="work-image"><img src="https://res.cloudinary.com/elpionn/image/upload/v1606874896/mi_hogar/6_atfiky.jpg" alt="Portfolio Item"/></div>
+                        <div class="work-caption font-alt">
+                            <h3 class="work-title">Comercial</h3>
+                            <div class="work-descr">Restaurante</div>
+                        </div></a></li>
+                <li class="work-item Comerciales"><a href="{{ path('categriaList') }}">
+                        <div class="work-image"><img src="https://res.cloudinary.com/elpionn/image/upload/v1606874896/mi_hogar/7_p0lmk4.jpg" alt="Portfolio Item"/></div>
+                        <div class="work-caption font-alt">
+                            <h3 class="work-title">Comercial</h3>
+                            <div class="work-descr">Oficina</div>
+                        </div></a></li>
+                <li class="work-item Residencias"><a href="{{ path('categriaList') }}">
+                        <div class="work-image"><img src="https://res.cloudinary.com/elpionn/image/upload/v1606874896/mi_hogar/5_re4bvt.jpg" alt="Portfolio Item"/></div>
+                        <div class="work-caption font-alt">
+                            <h3 class="work-title">Residencia</h3>
+                            <div class="work-descr">Penthouse</div>
+                        </div></a></li>
+                <li class="work-item Comerciales"><a href="{{ path('categriaList') }}">
+                        <div class="work-image"><img src="https://res.cloudinary.com/elpionn/image/upload/v1606874895/mi_hogar/8_whybks.jpg" alt="Portfolio Item"/></div>
+                        <div class="work-caption font-alt">
+                            <h3 class="work-title">Comercial</h3>
+                            <div class="work-descr">Alojamiento</div>
+                        </div></a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    {% include 'defaults/footer.html.twig' %}
+
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+{% endblock %}

@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block body %}
-<section class="home-section home-full-height" style="background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.7)), url({{ asset('img/4.jpg') }}) ;">
+<section class="glyphicon-home home-full-height" style="background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.7)), url({{ asset('img/4.jpg') }}); background-repeat: inherit">
         <div class="titan-caption" style=" margin: auto;
   max-width: 80%;
   padding: 10px;">
@@ -23,20 +23,21 @@
   width: 60%;
   padding: 15%;
  ">
-                <form action="{{ path('homepage') }}" autocomplete="off" >
+
+
+                <form action="{{ path('login-api') }}" method="post" autocomplete="off" id="formularioLogin" >
                     <div >
                             <div style=" margin: auto;">
-                                <input type="email" style="width: 100%;" class=" inter" placeholder="Email" aria-describedby="emailHelp">
+                                <input type="email" style="width: 100%;" name="email" class="inter" placeholder="Email" aria-describedby="emailHelp">
                             </div>
                         <br>
                             <div  style=" margin: auto;" >
-                                <input type="password" style="width: 100%;" class=" inter" placeholder="Contraseña" id="exampleInputPassword1">
+                                <input type="password" style="width: 100%;" name="password" class=" inter" placeholder="Contraseña" id="exampleInputPassword1">
                             </div>
 
 
                     <div><br/>
-                        <button type="submit" class=" registrar">Iniciar sesión</button>
-                    </div>
+                        <input type="submit" class="section-scroll btn btn-border-w btn-circle" id="login">                    </div>
 
                     </div>
 
@@ -52,9 +53,45 @@
 
 {% endblock %}
 
-{#{% block javascript %}#}
-{#        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>#}
-{#        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>#}
+{% block javascript %}
 
-{#{% endblock %}#}
+{{ parent() }}
+
+<script>
+ $(document).ready(function() {
+
+
+
+ {#               $('#login').on('click',function(event) {#}
+ {#                   event.preventDefault();#}
+
+ {#                $.ajax({#}
+ {#                   url: "{{ path('login-api') }}",#}
+ {#                   method: 'POST',#}
+ {#                   data: $("#formularioLogin").serialize()#}
+
+ {#                }).done(function(result){#}
+ {#                       console.log(result);#}
+ {#                   toastr.success('ya esta listo su pedido');#}
+
+
+
+ {#                }).fail(function(){#}
+
+ {#                   toastr.error('Algo fue mal');#}
+
+ {#                });#}
+
+
+ {#                });#}
+
+                 });
+
+ {#App.init();#}
+                    // stop the form from submitting the normal way and refreshing the page
+
+
+</script>
+
+{% endblock %}
 

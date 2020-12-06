@@ -1,0 +1,109 @@
+{% extends '/defaults/base.html.twig' %}
+
+{% block title %} Item {% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    {% include 'defaults/header.html.twig' %}
+
+
+
+
+    <section class="home-section home-fade  bg-dark-30 agency-page-header" id="home">
+        <section class="module bg-dark-30 pt-0 pb-0 parallax-bg testimonial">
+            <div class="testimonials-slider pt-0 pb-50">
+                <ul class="slides">
+                    <li>
+                        <div class="gallery-item">
+                            <div class="gallery-image"><a class="gallery"
+                                                          href="https://res.cloudinary.com/elpionn/image/upload/v1606874897/mi_hogar/4_nfvuaw.jpg"
+                                                          title="imagens"><img
+                                            src="https://res.cloudinary.com/elpionn/image/upload/v1606874897/mi_hogar/4_nfvuaw.jpg"
+                                            alt="Gallery Image 1"/>
+                                    <div class="gallery-caption">
+                                        <div class="gallery-icon"><span class="icon-magnifying-glass"></span></div>
+                                    </div>
+                                </a></div>
+
+                            <div class="gallery-image"><a class="gallery"
+                                                          href="https://res.cloudinary.com/elpionn/image/upload/v1606874896/mi_hogar/5_re4bvt.jpg"
+                                                          title="imagen"></a>
+                            </div>
+
+                            <div class="gallery-image"><a class="gallery"
+                                                          href="https://res.cloudinary.com/elpionn/image/upload/v1606874896/mi_hogar/6_atfiky.jpg"
+                                                          title="imagen"></a>
+                            </div>
+
+                            <div class="gallery-image"><a class="gallery"
+                                                          href="https://res.cloudinary.com/elpionn/image/upload/v1606874897/mi_hogar/3_woyipm.jpg"
+                                                          title="imagen"></a>
+                            </div>
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+        </section>
+    </section>
+
+
+    <div class="main">
+
+        <section class="module">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="row multi-columns-row post-columns">
+                            <div class="col-md-6 col-lg-6">
+                                <div class="post">
+                                    <div class="post-thumbnail"><a href="#"><img src="assets/images/post-1.jpg" alt="Blog-post Thumbnail"/></a></div>
+                                    <div class="post-header font-alt">
+                                        <h2 class="post-title"><a href="#">Our trip to the Alps</a></h2>
+                                        <div class="post-meta">By&nbsp;<a href="#">Mark Stone</a>&nbsp;| 23 November | 3 Comments
+                                        </div>
+                                    </div>
+                                    <div class="post-entry">
+                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                                    </div>
+                                    <div class="post-more"><a class="more-link" href="#">Read more</a></div>
+                                </div>
+                            </div>
+                        </div>
+                       </div>
+
+
+                    <div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
+                        <div class="widget">
+                            <form role="form">
+                                <div class="search-box">
+                                    <input class="form-control" type="text" placeholder="Search..."/>
+                                    <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </div>
+
+
+        {% include 'defaults/category.html.twig' %}
+
+
+    {% include 'defaults/footer.html.twig' %}
+
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends '/defaults/base.html.twig' %}
+
+{% block title %} Categoría  {% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    {% include 'defaults/header.html.twig' %}
+
+
+    <section class="home-section bg-dark-30 agency-page" id="home" style="background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.7)), url('https://res.cloudinary.com/elpionn/image/upload/v1606874897/mi_hogar/4_nfvuaw.jpg') ;">
+        <div class="titan-caption">
+            <div class="caption-content">
+                <div class="font-alt mb-40 titan-title-size-3"><span class="rotate">facíl | simple | flexible</span>
+                </div><a class="section-scroll btn btn-border-w btn-circle" href="#">Saber más</a>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="main pt-20">
+            <div class="container">
+                <div class="row multi-columns-row">
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <div class="price-table font-alt">
+                            <h4>Casa</h4>
+                            <div class="borderline"></div>
+                            <div class="work-image"><img src="https://res.cloudinary.com/elpionn/image/upload/v1606874897/mi_hogar/4_nfvuaw.jpg" alt="Portfolio Item"/></div>
+
+                            <ul class="price-details">
+                                <li><span>Working Contact Form</span></li>
+                                <li><span>Unlimited Domains</span></li>
+                            </ul><a class="btn btn-d btn-round" href="{{ path('item') }}">VER</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <div class="price-table font-alt">
+                            <h4>Casa</h4>
+                            <div class="borderline"></div>
+                            <div class="work-image"><img src="https://res.cloudinary.com/elpionn/image/upload/v1606874897/mi_hogar/4_nfvuaw.jpg" alt="Portfolio Item"/></div>
+
+                            <ul class="price-details">
+                                <li><span>Working Contact Form</span></li>
+                                <li><span>Unlimited Domains</span></li>
+                            </ul><a class="btn btn-d btn-round" href="{{ path('item') }}">VER</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <div class="price-table font-alt">
+                            <h4>Casa</h4>
+                            <div class="borderline"></div>
+                            <div class="work-image"><img src="https://res.cloudinary.com/elpionn/image/upload/v1606874897/mi_hogar/4_nfvuaw.jpg" alt="Portfolio Item"/></div>
+
+                            <ul class="price-details">
+                                <li><span>Working Contact Form</span></li>
+                                <li><span>Unlimited Domains</span></li>
+                            </ul><a class="btn btn-d btn-round" href="{{ path('item') }}">VER</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <div class="price-table font-alt">
+                            <h4>Casa</h4>
+                            <div class="borderline"></div>
+                            <div class="work-image"><img src="https://res.cloudinary.com/elpionn/image/upload/v1606874897/mi_hogar/4_nfvuaw.jpg" alt="Portfolio Item"/></div>
+
+                            <ul class="price-details">
+                                <li><span>Working Contact Form</span></li>
+                                <li><span>Unlimited Domains</span></li>
+                            </ul><a class="btn btn-d btn-round" href="{{ path('item') }}">VER</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-40">
+                    <div class="col-sm-6 col-sm-offset-3 align-center">
+                        <p>Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+    {% include 'defaults/footer.html.twig' %}
+
+    </div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+{% endblock %}

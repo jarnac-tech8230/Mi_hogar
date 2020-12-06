@@ -1,5 +1,17 @@
 web:
-    resource: ../../src/Controller/web/
+  resource: ../../src/Controller/web/
+  type: annotation
+  prefix: '/hogar'
+  name_prefix: ''
+
+home:
+    resource: ../../src/Controller/
     type: annotation
     prefix: '/'
+    name_prefix: ''
+
+api:
+    resource: ../../src/Controller/Api/
+    type: annotation
+    prefix: '/api'
     name_prefix: ''
