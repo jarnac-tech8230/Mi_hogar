@@ -7,6 +7,12 @@ namespace App\Controller\web;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+
+/**
+ * Class HeaderController
+ * @package App\Controller\web
+ * @Route("/web")
+ */
 class HeaderController extends AbstractController
 {
 
@@ -28,6 +34,7 @@ class HeaderController extends AbstractController
 
         return $this->render( 'vistas/categoria.html.twig' );
     }
+
 
     /**
      * @Route("/servicio", name="servicio")

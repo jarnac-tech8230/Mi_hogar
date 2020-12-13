@@ -14,7 +14,7 @@ class LoginController extends AbstractController
 {
     /**
      * @param Request $request
-     * @Route("/loginApi", name="login-api", methods={"POST"})
+     * @Route("/loginApi", name="login", methods={"POST"})
      * @return Response
      */
     public function loginAcceso(Request $request)
@@ -32,14 +32,12 @@ class LoginController extends AbstractController
                 'password'=>$passcode
             ));
 
-            $this->addFlash('notice_ok', $email);
-
         }catch (Exception $exception){
             $this->addFlash('notice_error','Revice el formato documento.');
         }
 
-//        return $this->json($ar);
-        return $this->redirectToRoute('homepage');
+        return $this->json($ar);
+//        return $this->redirectToRoute('homepage');
     }
 
 

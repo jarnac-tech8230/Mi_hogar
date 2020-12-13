@@ -14,4 +14,4 @@ api:
     resource: ../../src/Controller/Api/
     type: annotation
     prefix: '/api'
-    name_prefix: ''
+    name_prefix: 'api_'
