@@ -28,7 +28,52 @@
     =============================================
 
     -->
-    <!-- Default stylesheets-->
+
+
+    <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: inherit;
+            border-radius: 2%;
+            margin: auto;
+        }
+        .widget{
+            border-radius: 10%;
+        }
+
+        .title {
+            color: grey;
+            font-size: 18px;
+        }
+
+        .contactar {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 2px;
+            margin: 10px;
+            color: white;
+            background-color: #C28212;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 20px;
+            width: 50%;
+            font-size: 12px;
+        }
+
+        .card a {
+            text-decoration: none;
+            font-size: 22px;
+            color: black;
+        }
+
+        .contactar:hover {
+            opacity: 0.7;
+        }
+    </style>
+    <!-- MDBootstrap Cards Extended Pro  -->
+    <!-- Font Awesome -->
+
     <link href="{{ asset('lib/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Template specific stylesheets-->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
@@ -65,7 +110,7 @@
         }
     </style>
 </head>
-<body data-target=".onpage-navigation" data-offset="60">
+<body>
 
 <div class="page-loader">
     <div class="loader">Loading...</div>
@@ -77,6 +122,7 @@
 {% block body %}{% endblock %}
 
 {% block javascripts %}{% endblock %}
+
 <script src="{{ asset('lib/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('lib/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('lib/wow/dist/wow.js') }}"></script>
@@ -91,9 +137,48 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 <script src="{{ asset('js/plugins.js') }}"></script>
+<script>
+    $(function(){
+        var getTxt = $('.content p').text();
+        var realTxt = [getTxt]
+        var textCol = [getTxt]
+        var wordsCount = textCol[0].split(' ').length;
+        var words = textCol[0].split(' ');
+        var wordsLimit = 40;
+        var limitCol;
 
+        $('.readmore h3').click(function(){
+            if ( $(this).text() === "show more") {
+                $('.content p').text(realTxt.join(' '));
+                $('.content').addClass('scroll');
+                $(this).text('show less');
+                $('.item').addClass('showfull');
+            } else {
+                $('.content p').text(limitCol);
+                $(this).text('show more');
+                $('.item').removeClass('showfull');
+            }
+        });
+
+        if (wordsLimit <= wordsCount) {
+            words.splice(wordsLimit, wordsCount - wordsLimit);
+            words = words.join(' ');
+            $('.content p').text(words + '...');
+            limitCol = $('.content p').text();
+        }
+
+        $('.like').click(function(){
+            $(this).toggleClass('clicked');
+        });
+
+
+
+
+
+    });</script>
 
 <script>
+
     /* ---------------------------------------------- /*
      * Preloader
      /* ---------------------------------------------- */
@@ -105,59 +190,250 @@
 
         $(document).ready(function () {
 
-            // form validation
-                $("#formularioLogin").validate({
-                    rules: {
-                        password: {
-                            required:true
-                        },
-                        email: {
-                            required: true,
-                            email: true
-                        }
-                    },
-                    messages: {
-                        email: {
-                            required: "* Campo vacío",
-                            email: "Your email address must be in the format of name@domain.com"
-                        },
-                        password: {
-                            required: "* Ingrese su contraseña"
-                        }
+            $(function(){
+                var getTxt = $('.content p').text();
+                var realTxt = [getTxt]
+                var textCol = [getTxt]
+                var wordsCount = textCol[0].split(' ').length;
+                var words = textCol[0].split(' ');
+                var wordsLimit = 40;
+                var limitCol;
+
+                $('.readmore h3').click(function(){
+                    if ( $(this).text() === "show more") {
+                        $('.content p').text(realTxt.join(' '));
+                        $('.content').addClass('scroll');
+                        $(this).text('show less');
+                        $('.item').addClass('showfull');
+                    } else {
+                        $('.content p').text(limitCol);
+                        $(this).text('show more');
+                        $('.item').removeClass('showfull');
                     }
+                });
 
+                if (wordsLimit <= wordsCount) {
+                    words.splice(wordsLimit, wordsCount - wordsLimit);
+                    words = words.join(' ');
+                    $('.content p').text(words + '...');
+                    limitCol = $('.content p').text();
+                }
 
+                $('.like').click(function(){
+                    $(this).toggleClass('clicked');
                 });
 
 
 
 
 
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+            jQuery.validator.setDefaults({
+                debug: true,
+                success: "valid"
+            });
+
+            // form validation
+            $("#formularioLogin").validate({
+                rules: {
+                    password: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    }
+                },
+                messages: {
+                    email: {
+                        required: "* Campo vacío",
+                        email: "Tu correo ingresado no es válido(ejemplo@domain.com)"
+                    },
+                    password: {
+                        required: "* Ingrese su contraseña"
+                    }
+                }
+
+
+            });
+
+            $("#formularioRegister").validate({
+                rules: {
+                    password: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    nombre:{
+                        required:true
+                    }
+                },
+                messages: {
+                    email: {
+                        required: "* Campo vacío",
+                        email: "Tu correo ingresado no es válido(ejemplo@domain.com)"
+                    },
+                    password: {
+                        required: "* Ingrese su contraseña"
+                    },
+                    nombre:{
+                        required: "* Campo vacío"
+                    }
+                }
+
+
+            });
+
+
+            $("#contactForm").validate({
+                rules: {
+                    nameContact: {
+                        required: true
+                    },
+                    emailContact: {
+                        required: true,
+                        email: true
+                    },
+                    messageContact: {
+                        required: true
+                    }
+                },
+                messages: {
+                    emailContact: {
+                        required: "* Campo vacío",
+                        email: "Tu correo ingresado no es válido(ejemplo@domain.com)"
+                    },
+                    nameContact: {
+                        required: "* Ingrese su nombre completo"
+                    },
+                    messageContact: {
+                        required: "* Ingrese su message"
+
+                    }
+                }
+
+
+            });
+
+
+            $("#searchForm").submit(function (e) {
+
+                e.preventDefault()
+
+                //
+
+                if ($("#selectRegion").val() == "Seleccionar..." || $("#selectTipo").val() == "Seleccionar..." || $("#selectHabitation").val() == "Seleccionar..." || $("#selectCuidad").val() == "Seleccionar...") {
+
+                    $("#text").text("Se debe seleccionar");
+                    $("#text").css({color: "red"});
+
+
+                    // $('.loader').fadeOut().show();
+                    // $('.page-loader').fadeOut('slow').show();
+
+
+                    {#$.ajax({#}
+                    {#    url: '{{ path("api_login") }}',#}
+                    {#    dataType: 'json',#}
+                    {#    method: 'POST',#}
+                    {#    data: $('#formularioLogin').serialize()#}
+
+                    {#}).done(function (data) {#}
+                    {#    location.href='{{ path("homepage") }}' + data[0].email;#}
+                    {#}).fail(function(e){#}
+
+                    {#    swal("Error!", "Algo salio mal", "error");#}
+
+                    {#})#}
+                } else {
+                    $("#text").hide()
+                }
+
+            })
+
+
+            $("#contactForm").submit(function (e) {
+
+                e.preventDefault()
+
+                if ($("#contactForm").validate().errorList.length == 0) {
+
+                    $.ajax({
+                        url: '{{ path("api_contacto") }}',
+                        dataType: 'json',
+                        method: 'POST',
+                        data: $('#contactForm').serialize()
+
+                    }).done(function (data) {
+                       if (data !== "error"){
+                           // console.log(data)
+                           swal(
+                               '!Felicidades!',
+                               data,
+                               'success'
+                           ).then(function (result) {
+                               location.href = '{{ path("homepage") }}'
+                           })
+                       }else {
+                           // console.log(data)
+                           swal(
+                               '!Error!',
+                               "Por favor, rellene bien el formulario de contacto",
+                               'error'
+                           )
+                       }
+                    }).fail(function (e) {
+
+                        swal("Error!", "Algo salio mal", "error");
+
+                    })
+                } else {
+                    $("#name-error").css({color: "red"})
+                    $("#email-error").css({color: "red"})
+                    $("#message-error").css({color: "red"})
+                }
+
+            })
+
 
             $("#formularioLogin").submit(function (e) {
 
                 e.preventDefault()
 
-                if ($("#formularioLogin").validate().errorList.length == 0){
+                if ($("#formularioLogin").validate().errorList.length == 0) {
 
-                console.log()
-                $('.loader').fadeOut().show();
-                $('.page-loader').fadeOut('slow').show();
+                    $('.loader').fadeOut().show();
+                    $('.page-loader').fadeOut('slow').show();
 
 
-                $.ajax({
-                    url: '{{ path("api_login") }}',
-                    dataType: 'json',
-                    method: 'POST',
-                    data: $('#formularioLogin').serialize()
+                    $.ajax({
+                        url: '{{ path("api_login") }}',
+                        dataType: 'json',
+                        method: 'POST',
+                        data: $('#formularioLogin').serialize()
 
-                }).done(function (data) {
-                    location.href='{{ path("homepage") }}' + data[0].email;
-                }).fail(function(e){
+                    }).done(function (data) {
+                        location.href = '{{ path("homepage") }}' + data[0].email;
+                    }).fail(function (e) {
 
-                    swal("Error!", "Algo salio mal", "error");
+                        swal("Error!", "Algo salio mal", "error");
 
-                })
+                    })
                 }
 
             })
@@ -609,10 +885,6 @@
             });
 
 
-
-
-
-
             /* ---------------------------------------------- /*
              * Google Map
              /* ---------------------------------------------- */
@@ -862,7 +1134,7 @@
             }
 
         });
-        })(jQuery);
+    })(jQuery);
 
 
 </script>

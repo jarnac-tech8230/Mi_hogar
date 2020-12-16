@@ -1,43 +1,51 @@
 {% extends 'defaults/base.html.twig' %}
 
-{% block title %} Registrate {% endblock %}
+{% block title %} Registrarse {% endblock %}
 
 {% block styles %}
     {{ parent() }}
+
 {% endblock %}
 
 {% block body %}
-    <section class="home-section home-full-height" style="background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.7)), url({{ asset('img/4.jpg') }}) ;">
+    <div class=" home-section  home-full-height "
+         style="background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.7)), url({{ asset('img/4.jpg') }});
+                 background-size: 100% 100%;">
         <div class="titan-caption" style=" margin: auto;
-  max-width: 80%;
+  max-width: 75%;
   padding: 10px;">
-            <a href="{{ path('homepage') }}" >
-                <div class="text-center h-25" >
+            <a href="{{ path('homepage') }}">
+                <div class="text-center h-25">
                     <img src="{{ asset('img/logo2.png') }}" class="h-100">
                 </div>
             </a>
-            <div class="caption-content"style=" margin: auto;
-  width: 60%;
+            <div class="caption-content" style=" margin: auto;
+  width: 80%;
   padding: 15%;
+  color: red;
+  text-align: left;
  ">
-                <form action="{{ path('homepage') }}" autocomplete="off" >
-                    <div >
-                        <div style=" margin: auto;">
-                            <input type="text" style="width: 100%;" class=" inter" placeholder="Nombre completo" aria-describedby="emailHelp">
+
+
+                <form autocomplete="off" id="formularioRegister">
+                    <div>
+                        <div style=" margin: auto; ">
+                            <input type="text" style="width: 100%; color: white" name="nombre" class="inter" placeholder="Nombre completo">
+                        </div>
+                        <br>
+                        <div style=" margin: auto; ">
+                            <input type="email" style="width: 100%; color: white" name="email" class="inter" placeholder="Email">
                         </div>
                         <br>
                         <div style=" margin: auto;">
-                            <input type="email" style="width: 100%;" class=" inter" placeholder="Email" aria-describedby="emailHelp">
-                        </div>
-                        <br>
-                        <div  style=" margin: auto;" >
-                            <input type="password" style="width: 100%;" class=" inter" placeholder="Contraseña" id="exampleInputPassword1">
+                            <input type="password" style="width: 100%; color: white" name="password" class="inter"
+                                   placeholder="Contraseña">
                         </div>
 
 
                         <div><br/>
-                            <button type="submit" class=" registrar">Registrate</button>
-                        </div>
+                            <input type="submit" value="Registrate" class="section-scroll btn btn-border-w btn-circle"
+                                   id="login"></div>
 
                     </div>
 
@@ -45,7 +53,7 @@
                 </form>
             </div>
         </div>
-    </section>
+    </div>
 
 
 
@@ -53,4 +61,9 @@
 
 {% endblock %}
 
+{% block javascript %}
+
+{{ parent() }}
+
+    {% endblock %}
 
