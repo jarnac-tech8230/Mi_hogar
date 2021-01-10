@@ -281,6 +281,12 @@
                     },
                     nombre:{
                         required:true
+                    },
+                    telefono:{
+                        required:true
+                    },
+                    apellido:{
+                        required:true
                     }
                 },
                 messages: {
@@ -292,6 +298,12 @@
                         required: "* Ingrese su contraseña"
                     },
                     nombre:{
+                        required: "* Campo vacío"
+                    },
+                    telefono:{
+                        required: "* Campo vacío"
+                    },
+                    apellido:{
                         required: "* Campo vacío"
                     }
                 }
@@ -411,24 +423,34 @@
             })
 
 
-            $("#formularioLogin").submit(function (e) {
+            $("#formularioRegister").submit(function (e) {
 
                 e.preventDefault()
 
-                if ($("#formularioLogin").validate().errorList.length == 0) {
+                if ($("#formularioRegister").validate().errorList.length == 0) {
 
                     $('.loader').fadeOut().show();
                     $('.page-loader').fadeOut('slow').show();
 
 
                     $.ajax({
-                        url: '{{ path("api_login") }}',
+                        url: '{{ path("api_account") }}',
                         dataType: 'json',
                         method: 'POST',
-                        data: $('#formularioLogin').serialize()
+                        data: $('#formularioRegister').serialize()
 
                     }).done(function (data) {
-                        location.href = '{{ path("homepage") }}' + data[0].email;
+                        if (data.msg == "ok") {
+                            // console.log(data)
+                            swal(
+                                '!REGISTRADO!',
+                                'Exitosamente',
+                                'success'
+                            ).then(function (result) {
+                                location.href = '{{ path("homepage") }}'
+                            })
+                        }
+
                     }).fail(function (e) {
 
                         swal("Error!", "Algo salio mal", "error");

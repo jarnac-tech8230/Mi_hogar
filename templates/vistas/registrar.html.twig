@@ -26,15 +26,22 @@
   text-align: left;
  ">
 
-
                 <form autocomplete="off" id="formularioRegister">
                     <div>
                         <div style=" margin: auto; ">
-                            <input type="text" style="width: 100%; color: white" name="nombre" class="inter" placeholder="Nombre completo">
+                            <input type="text" style="width: 100%; color: white" name="nombre" class="inter" placeholder="Nombre">
+                        </div>
+                        <br>
+                        <div style=" margin: auto; ">
+                            <input type="text" style="width: 100%; color: white" name="apellido" class="inter" placeholder="Apellido">
                         </div>
                         <br>
                         <div style=" margin: auto; ">
                             <input type="email" style="width: 100%; color: white" name="email" class="inter" placeholder="Email">
+                        </div>
+                        <br>
+                        <div style=" margin: auto; ">
+                            <input type="number" style="width: 100%; color: white" name="telefono" min="0" class="inter" placeholder="Teléfono">
                         </div>
                         <br>
                         <div style=" margin: auto;">
@@ -47,6 +54,10 @@
                             <input type="submit" value="Registrate" class="section-scroll btn btn-border-w btn-circle"
                                    id="login"></div>
 
+                    </div>
+
+                    <div class="mt-20" style="color: white">
+                        Ya tiene una cuenta? <a href="{{ path('login') }}" style="color: #cf6e0e">Ingrese aquí!</a>
                     </div>
 
 

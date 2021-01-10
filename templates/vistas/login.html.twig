@@ -26,16 +26,17 @@
  ">
 
 
-                <form autocomplete="off" id="formularioLogin">
+                <form action="{{ path('app_login') }}" method="post" autocomplete="off" id="formularioLogin">
                     <div>
                         <div style=" margin: auto; ">
-                            <input type="email" style="width: 100%; color: white" name="email" class="inter" placeholder="Email">
+                            <input type="email" style="width: 100%; color: white" name="_email" class="inter" placeholder="Email">
                         </div>
                         <br>
                         <div style=" margin: auto;">
-                            <input type="password" style="width: 100%; color: white" name="password" class="inter"
+                            <input type="password" style="width: 100%; color: white" name="_password" class="inter"
                                    placeholder="Contraseña">
                         </div>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
 
 
                         <div><br/>
@@ -45,6 +46,13 @@
                     </div>
 
 
+                    <div class="mt-20" style="color: white">
+                        Olvidaste tu contraseña? <a href="#" style="color: #cf6e0e">haz click aquí!</a>
+                    </div>
+
+                    <div class="mt-20" style="color: white">
+                         <a href="{{ path('registro') }}" style="color: whitesmoke">¿crea una cuenta?</a>
+                    </div>
                 </form>
             </div>
         </div>

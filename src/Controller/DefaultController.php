@@ -14,7 +14,7 @@ class DefaultController extends AbstractController
 {
 
     /**
-     * @Route("/{valor}", name="homepage", methods={"GET"})
+     * @Route("/", name="homepage")
      */
     public function inicio(Request $request, $valor= null){
 
